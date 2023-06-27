@@ -1,7 +1,7 @@
-package ifpr.pgua.eic.escola.models;
+package ifpr.pgua.eic.biblioteca.models;
 
 
-public class Aluno {
+public class Livro {
     public String toString(){
         return "";
     }

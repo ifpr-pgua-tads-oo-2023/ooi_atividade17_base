@@ -1,4 +1,4 @@
-package ifpr.pgua.eic.escola;
+package ifpr.pgua.eic.biblioteca;
 
 public class Launcher {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package ifpr.pgua.eic.escola.models;
+package ifpr.pgua.eic.biblioteca.models;
 
-public class Curso {
+public class Autor {
     
     @Override
     public String toString() {

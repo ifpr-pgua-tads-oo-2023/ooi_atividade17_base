@@ -1,16 +1,14 @@
-package ifpr.pgua.eic.escola;
+package ifpr.pgua.eic.biblioteca;
 
 import java.util.ArrayList;
 
-import ifpr.pgua.eic.escola.controllers.TelaCadastroAluno;
-import ifpr.pgua.eic.escola.controllers.TelaPrincipal;
-import ifpr.pgua.eic.escola.controllers.TelaVisualizarAlunos;
-import ifpr.pgua.eic.escola.infra.Escritor;
-import ifpr.pgua.eic.escola.infra.Leitor;
-import ifpr.pgua.eic.escola.models.Escola;
-import ifpr.pgua.eic.escola.models.Professor;
-import ifpr.pgua.eic.escola.models.Aluno;
-import ifpr.pgua.eic.escola.models.Curso;
+import ifpr.pgua.eic.biblioteca.controllers.TelaCadastroAutor;
+import ifpr.pgua.eic.biblioteca.controllers.TelaPrincipal;
+import ifpr.pgua.eic.biblioteca.controllers.TelaVisualizarAutores;
+import ifpr.pgua.eic.biblioteca.infra.Escritor;
+import ifpr.pgua.eic.biblioteca.infra.Leitor;
+import ifpr.pgua.eic.biblioteca.models.Biblioteca;
+import ifpr.pgua.eic.biblioteca.models.Autor;
 import io.github.hugoperlin.navigatorfx.BaseAppNavigator;
 import io.github.hugoperlin.navigatorfx.ScreenRegistryFXML;
 
@@ -24,7 +22,7 @@ public class App extends BaseAppNavigator{
     /*gerenciador da escola que será compartilhado com as diferentes telas
      * da aplicação.
      */
-    private Escola gerenciador;
+    private Biblioteca gerenciador;
 
 
     /*método utilizado para inicializar dependências da aplicação. Este
@@ -34,11 +32,8 @@ public class App extends BaseAppNavigator{
     public void init() throws Exception {
         super.init();
         Leitor leitor = new Leitor();
-        /*ArrayList<Aluno> listaAlunos = leitor.lerAlunos("alunos.txt");
-        ArrayList<Professor> listaProfessores = leitor.lerProfessores("professor.txt");
-        ArrayList<Curso> listaCursos = leitor.lerCursos("cursos.txt");*/
-
-        gerenciador = new Escola("SuperEscola", "2233-1234");
+        
+        gerenciador = new Biblioteca();
     }
 
     @Override
@@ -46,9 +41,6 @@ public class App extends BaseAppNavigator{
         // TODO Auto-generated method stub
         super.stop();
         Escritor escritor = new Escritor();
-        /*escritor.salvarAlunos("alunos.txt",gerenciador.getAlunos());
-        escritor.salvarProfessores("professores.txt",gerenciador.getProfessores());
-        escritor.salvarCursos("cursos.txt",gerenciador.getCursos());*/
         
     }
 
@@ -71,13 +63,13 @@ public class App extends BaseAppNavigator{
                       new ScreenRegistryFXML(App.class, 
                                          "principal.fxml", 
                                           o->new TelaPrincipal()));
-        registraTela("CADASTRO_ALUNO", 
+        registraTela("CADASTRO_AUTOR", 
                       new ScreenRegistryFXML(App.class, 
-                                             "cadastro_aluno.fxml",
-                                            o->new TelaCadastroAluno()));
-        registraTela("VISUALIZAR_ALUNOS",
+                                             "cadastro_autor.fxml",
+                                            o->new TelaCadastroAutor()));
+        registraTela("VISUALIZAR_AUTORES",
                      new ScreenRegistryFXML(App.class, 
-                                           "visualizar_alunos.fxml", o->new TelaVisualizarAlunos()));                                
+                                           "visualizar_autores.fxml", o->new TelaVisualizarAutores()));                                
     
         }
     
