@@ -1,0 +1,3 @@
+placa1;modelo1;fab1;cor1;1
+placa2;modelo2;fab2;cor2;2
+placa3;modelo3;fab3;cor3;3
