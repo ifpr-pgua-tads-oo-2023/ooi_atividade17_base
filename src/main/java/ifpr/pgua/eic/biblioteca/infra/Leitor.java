@@ -12,8 +12,8 @@ import ifpr.pgua.eic.biblioteca.models.Livro;
 
 public class Leitor {
 
-
-    public ArrayList<Livro> lerLivros(String nomeArquivo){
+    /*O lista de autores é necessária para permitir buscar o autor do livro */
+    public ArrayList<Livro> lerLivros(String nomeArquivo, ArrayList<Autor> listaAutores){
         throw new RuntimeException("TODO");
     }
 
